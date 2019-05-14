@@ -17,6 +17,8 @@ App developed for IOS 12.2
 
 - [Arduino Firebase Repo](https://github.com/FirebaseExtended/firebase-arduino)
 
+- [Charts](https://github.com/danielgindi/Charts) For designing the charts on the IOS project.
+
 ## Disclaimer
 
 *This is not an official product under any license, nor we own any of the libraries used along the development of the final product.*
