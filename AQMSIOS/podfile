@@ -19,4 +19,6 @@ target 'AQMSIOS' do
   #Pod Charts
   pod 'Charts'
 
+	pod 'Firebase/Core'
+	pod 'Firebase/Database'
 end
