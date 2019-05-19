@@ -1,3 +1,4 @@
+#include <ArduinoJson.h>
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
 #include "DHT.h"
@@ -47,6 +48,9 @@ void setup() {
 
 
 void loop() {
+
+  DynamicJsonBuffer jsonBuffer;
+  
   float h = dht.readHumidity();
   float t = dht.readTemperature();
   float hic = dht.computeHeatIndex(t, h, false);
@@ -54,24 +58,29 @@ void loop() {
   mySensor.readAlgorithmResults();
   float CO2 = mySensor.getCO2();
   float TVOC = mySensor.getTVOC();
-  float MILLI = millis();
   
-  if (isnan(h) || isnan(t) || isnan(CO2) || isnan(TVOC) || isnan(MILLI)) {  
+  if (isnan(h) || isnan(t) || isnan(CO2) || isnan(TVOC)) {  
     Serial.println("Failed to read from sensors!");
     return;
     }
 
+  JsonObject& DataObject = jsonBuffer.createObject();
+  JsonObject& Time = DataObject.createNestedObject("timestamp");
+  DataObject["temperature"] = t;
+  DataObject["humidity"] = h;
+  DataObject["heatIndex"] = hic;
+  DataObject["co2"] = CO2;
+  DataObject["tvoc"] = h;
+  Time[".sv"] = "timestamp";
+  
   if (Firebase.failed()) {
-      Serial.print("pushing /logs failed:");
+      Serial.print("Firebase conn ERROR");
       Serial.println(Firebase.error());
       delay(1500);
       return;
       }
-   Firebase.pushInt("ID", 1);
-   Firebase.pushFloat("CO2", CO2);
-   Firebase.pushFloat("TVOC", TVOC);
-   Firebase.pushFloat("Humidity", h);
-   Firebase.pushFloat("Temperature", t);
-   Firebase.pushFloat("Heat_Index", hic);
-   delay(2000);
+
+   Firebase.push("Data", DataObject);
+   
+   delay(10000);
 }
