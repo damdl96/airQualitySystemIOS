@@ -65,14 +65,16 @@ void loop() {
     }
 
   JsonObject& DataObject = jsonBuffer.createObject();
+  JsonObject& Time = DataObject.createNestedObject("timestamp");
   DataObject["temperature"] = t;
   DataObject["humidity"] = h;
   DataObject["heatIndex"] = hic;
   DataObject["co2"] = CO2;
   DataObject["tvoc"] = h;
+  Time[".sv"] = "timestamp";
   
   if (Firebase.failed()) {
-      Serial.print("pushing /logs failed:");
+      Serial.print("Firebase conn ERROR");
       Serial.println(Firebase.error());
       delay(1500);
       return;
@@ -80,5 +82,5 @@ void loop() {
 
    Firebase.push("Data", DataObject);
    
-   delay(2000);
+   delay(10000);
 }
