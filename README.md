@@ -13,11 +13,15 @@ App developed for IOS 12.2
 
 - [Arduino Firebase](https://firebase-arduino.readthedocs.io/en/latest/)
 
+- [Arduino Json](https://arduinojson.org/v6/doc/)
+
 ## Libraries
 
-- [Arduino Firebase Repo](https://github.com/FirebaseExtended/firebase-arduino)
+- [Arduino Firebase Repo](https://github.com/FirebaseExtended/firebase-arduino) used to stablish connection from NODEMCU to Firebase.
 
-- [Charts](https://github.com/danielgindi/Charts) For designing the charts on the IOS project.
+- [Arduino Json](https://github.com/bblanchon/ArduinoJson) used for serialization of sensors data.
+
+- [Charts](https://github.com/danielgindi/Charts) used for in IOS App Charts.
 
 ## Disclaimer
 
