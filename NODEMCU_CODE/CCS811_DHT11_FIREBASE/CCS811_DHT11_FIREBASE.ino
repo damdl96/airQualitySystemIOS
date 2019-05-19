@@ -58,13 +58,19 @@ void loop() {
   mySensor.readAlgorithmResults();
   float CO2 = mySensor.getCO2();
   float TVOC = mySensor.getTVOC();
-  float MILLI = millis();
   
-  if (isnan(h) || isnan(t) || isnan(CO2) || isnan(TVOC) || isnan(MILLI)) {  
+  if (isnan(h) || isnan(t) || isnan(CO2) || isnan(TVOC)) {  
     Serial.println("Failed to read from sensors!");
     return;
     }
 
+  JsonObject& DataObject = jsonBuffer.createObject();
+  DataObject["temperature"] = t;
+  DataObject["humidity"] = h;
+  DataObject["heatIndex"] = hic;
+  DataObject["co2"] = CO2;
+  DataObject["tvoc"] = h;
+  
   if (Firebase.failed()) {
       Serial.print("pushing /logs failed:");
       Serial.println(Firebase.error());
@@ -72,13 +78,7 @@ void loop() {
       return;
       }
 
+   Firebase.push("Data", DataObject);
    
-   
-   Firebase.pushInt("ID", 1);
-   Firebase.pushFloat("CO2", CO2);
-   Firebase.pushFloat("TVOC", TVOC);
-   Firebase.pushFloat("Humidity", h);
-   Firebase.pushFloat("Temperature", t);
-   Firebase.pushFloat("Heat_Index", hic);
    delay(2000);
 }
