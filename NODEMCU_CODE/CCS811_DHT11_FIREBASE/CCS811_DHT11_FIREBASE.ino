@@ -1,3 +1,4 @@
+#include <ArduinoJson.h>
 #include <ESP8266WiFi.h>
 #include <FirebaseArduino.h>
 #include "DHT.h"
@@ -47,6 +48,9 @@ void setup() {
 
 
 void loop() {
+
+  DynamicJsonBuffer jsonBuffer;
+  
   float h = dht.readHumidity();
   float t = dht.readTemperature();
   float hic = dht.computeHeatIndex(t, h, false);
@@ -67,6 +71,9 @@ void loop() {
       delay(1500);
       return;
       }
+
+   
+   
    Firebase.pushInt("ID", 1);
    Firebase.pushFloat("CO2", CO2);
    Firebase.pushFloat("TVOC", TVOC);
