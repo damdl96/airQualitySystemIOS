@@ -16,9 +16,7 @@ target 'AQMSIOS' do
     inherit! :search_paths
     # Pods for testing
   end
-  #Pod Charts
-  pod 'Charts'
-
 	pod 'Firebase/Core'
-	pod 'Firebase/Database'
+  	pod 'Firebase/Database'
+  
 end

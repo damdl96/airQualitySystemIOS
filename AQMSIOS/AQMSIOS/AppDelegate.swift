@@ -2,23 +2,26 @@
 //  AppDelegate.swift
 //  AQMSIOS
 //
-//  Created by Adrian Cabrera on 14/05/19.
-//  Copyright © 2019 Adrian Cabrera. All rights reserved.
+//  Created by EhecatlSystems on 14/05/19.
+//  Copyright © 2019 EhecatlSystems. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import Charts
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Thread.sleep(forTimeInterval: 3.0)
         return true
     }
 
