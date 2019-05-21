@@ -13,17 +13,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AQMSIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="TSa-tC-IYb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qfr-qm-KMO">
-                                <rect key="frame" x="32" y="90" width="180.5" height="445"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qfr-qm-KMO" userLabel="SensorData">
+                                <rect key="frame" x="32" y="115" width="180.5" height="445"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tvoc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-c9-gBS" userLabel="Tvoc">
                                         <rect key="frame" x="0.0" y="0.0" width="64.5" height="42.5"/>
@@ -76,7 +75,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MHG-Ka-ORe">
-                                <rect key="frame" x="329" y="115" width="65" height="295"/>
+                                <rect key="frame" x="329" y="131" width="65" height="295"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Indicator off" translatesAutoresizingMaskIntoConstraints="NO" id="adx-19-VnQ">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
@@ -89,10 +88,12 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7C-Rl-neD">
-                                <rect key="frame" x="20" y="568" width="374" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a7C-Rl-neD">
+                                <rect key="frame" x="0.0" y="568" width="414" height="328"/>
                                 <color key="backgroundColor" red="0.74619406461715698" green="0.74619406461715698" blue="0.74619406461715698" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="328" id="iTG-9E-z5Q"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The next data shows the value per color in the status:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-Sd-JdL">
                                 <rect key="frame" x="27" y="625" width="360.5" height="20.5"/>
@@ -141,23 +142,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air Quality Monitoring System" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkI-Js-mGr">
+                                <rect key="frame" x="70.5" y="44" width="273.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ybh-dK-Dg3" firstAttribute="top" secondItem="bkh-Sd-JdL" secondAttribute="bottom" constant="9" id="33O-f3-bEd"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="MHG-Ka-ORe" secondAttribute="bottom" constant="436" id="3Q9-xG-sgV"/>
+                            <constraint firstItem="a7C-Rl-neD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3yX-wt-CtJ"/>
+                            <constraint firstItem="MHG-Ka-ORe" firstAttribute="top" secondItem="TSa-tC-IYb" secondAttribute="bottom" constant="31" id="DZf-zM-NwP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MHG-Ka-ORe" secondAttribute="trailing" constant="20" id="FAO-nu-5bV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ybh-dK-Dg3" secondAttribute="trailing" constant="120" id="FRX-ds-b6t"/>
-                            <constraint firstAttribute="bottom" secondItem="TSa-tC-IYb" secondAttribute="bottom" id="Fce-6w-fVa"/>
                             <constraint firstItem="TSa-tC-IYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GJj-PP-fvR"/>
                             <constraint firstItem="TSa-tC-IYb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gc9-gK-6s7"/>
-                            <constraint firstItem="bkh-Sd-JdL" firstAttribute="top" secondItem="pww-I3-4ta" secondAttribute="bottom" constant="10" id="Jz2-Js-Syt"/>
-                            <constraint firstItem="ybh-dK-Dg3" firstAttribute="top" secondItem="bkh-Sd-JdL" secondAttribute="bottom" constant="9" id="PsF-xZ-aaR"/>
                             <constraint firstItem="ybh-dK-Dg3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="QOn-xS-JKF"/>
-                            <constraint firstItem="MHG-Ka-ORe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="UnL-EC-LvL"/>
-                            <constraint firstItem="pww-I3-4ta" firstAttribute="top" secondItem="Qfr-qm-KMO" secondAttribute="bottom" constant="54" id="WgY-po-jsa"/>
+                            <constraint firstItem="pww-I3-4ta" firstAttribute="top" secondItem="Qfr-qm-KMO" secondAttribute="bottom" constant="29" id="RTt-gL-9PJ"/>
+                            <constraint firstAttribute="trailing" secondItem="a7C-Rl-neD" secondAttribute="trailing" id="T8B-bU-fJV"/>
+                            <constraint firstItem="Qfr-qm-KMO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="UPk-6B-VPt"/>
+                            <constraint firstItem="jkI-Js-mGr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XcJ-BP-Gu4"/>
+                            <constraint firstItem="ybh-dK-Dg3" firstAttribute="top" secondItem="pww-I3-4ta" secondAttribute="bottom" constant="39.5" id="Yec-n9-4Zg"/>
                             <constraint firstItem="bkh-Sd-JdL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YtU-6j-gs2"/>
-                            <constraint firstItem="Qfr-qm-KMO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="Yyo-Op-D2E"/>
+                            <constraint firstItem="jkI-Js-mGr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c2u-qd-clS"/>
+                            <constraint firstAttribute="bottom" secondItem="a7C-Rl-neD" secondAttribute="bottom" id="dgx-nZ-DCX"/>
+                            <constraint firstAttribute="bottom" secondItem="TSa-tC-IYb" secondAttribute="bottom" constant="796" id="g71-zs-TKL"/>
                             <constraint firstItem="Qfr-qm-KMO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="gH9-fH-06u"/>
                             <constraint firstAttribute="trailing" secondItem="TSa-tC-IYb" secondAttribute="trailing" id="h42-JD-kCY"/>
+                            <constraint firstItem="bkh-Sd-JdL" firstAttribute="top" secondItem="pww-I3-4ta" secondAttribute="bottom" constant="10" id="nvL-et-oAJ"/>
                             <constraint firstItem="pww-I3-4ta" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u6u-TF-LG3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -173,6 +187,7 @@
                         <outlet property="tvocdata" destination="ngR-RS-D8G" id="ikp-Uc-sEn"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="41.517857142857139"/>
         </scene>

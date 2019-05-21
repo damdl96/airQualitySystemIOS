@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  AQMSIOS
 //
-//  Created by EhecatlSystems on 14/05/19.
-//  Copyright © 2019 EhecatlSystems. All rights reserved.
+//  Created by Adrian Cabrera on 14/05/19.
+//  Copyright © 2019 Adrian Cabrera. All rights reserved.
 //
 
 import UIKit

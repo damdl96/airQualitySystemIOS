@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  AQMSIOS
 //
-//  Created by EhecatlSystems on 14/05/19.
-//  Copyright © 2019 EhecatlSystems. All rights reserved.
+//  Created by Adrian Cabrera on 14/05/19.
+//  Copyright © 2019 Adrian Cabrera. All rights reserved.
 //
 
 import UIKit
@@ -24,12 +24,10 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        dabackground.layer.cornerRadius = 8.0
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view, typically from a nib.
         var baseRef: DatabaseReference!
         baseRef = Database.database().reference()
-        
         var i: Int = 0
         var hum:Double = 0
         var co2:Double = 0
@@ -37,11 +35,7 @@ class ViewController: UIViewController {
         var temp:Double = 0
         var tvoc:Double = 0
         
-        
-//        Ill leave the prints to console commented so if you want to check the data that the app is reciving
-
-        
-        //        baseRef.child("Data").observe(.value, with: { snapshot in
+//        baseRef.child("Data").observe(.value, with: { snapshot in
 //            print(snapshot.value as Any)
 //        })
         
@@ -51,31 +45,31 @@ class ViewController: UIViewController {
             for (_, value) in snapshotval! {
 //                print(key, value)
                 let innerDict:NSDictionary = value as! NSDictionary
-                for (_, v) in innerDict {
-//                    print(k, v)
+                for (k, v) in innerDict {
+                    print(k, v)
                     if i == 0{
                         hum = v as! Double
-//                        print(hum)
+                        print(hum)
                     }
                     if i == 1{
                         co2 = v as! Double
-//                        print(co2)
+                        print(co2)
                     }
                     if i == 2{
                         heaIn = v as! Double
-//                        print(heaIn)
+                        print(heaIn)
                     }
                     if i == 3{
                         temp = v as! Double
-//                        print(temp)
+                        print(temp)
                     }
                     if i == 5{
                         tvoc = v as! Double
-//                        print(tvoc)
+                        print(tvoc)
                     }
                     i = i+1
                 }
-                i = 0
+                
             }
             
             self.tvocdata.text = String(tvoc)
@@ -108,7 +102,7 @@ class ViewController: UIViewController {
             }else {
                 self.indicatortemp.image = UIImage(named: "Cold.png")
             }
-            print("\n")
+            
         })
         
         
