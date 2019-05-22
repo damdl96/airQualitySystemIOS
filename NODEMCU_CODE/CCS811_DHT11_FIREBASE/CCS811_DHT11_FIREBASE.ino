@@ -70,7 +70,7 @@ void loop() {
   DataObject["humidity"] = h;
   DataObject["heatIndex"] = hic;
   DataObject["co2"] = CO2;
-  DataObject["tvoc"] = h;
+  DataObject["tvoc"] = TVOC;
   Time[".sv"] = "timestamp";
   
   if (Firebase.failed()) {
