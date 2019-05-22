@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  AQMSIOS
 //
-//  Created by Adrian Cabrera on 14/05/19.
-//  Copyright © 2019 Adrian Cabrera. All rights reserved.
+//  Created by Diego Moreno on 14/05/19.
+//  Copyright © 2019 Diego Moreno. All rights reserved.
 //
 
 import UIKit
