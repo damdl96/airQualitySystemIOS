@@ -1,6 +1,14 @@
 
-# Created by https://www.gitignore.io/api/swift
-# Edit at https://www.gitignore.io/?templates=swift
+# Created by https://www.gitignore.io/api/swift,cocoapods
+# Edit at https://www.gitignore.io/?templates=swift,cocoapods
+
+### CocoaPods ###
+## CocoaPods GitIgnore Template
+
+# CocoaPods - Only use to conserve bandwidth / Save time on Pushing
+#           - Also handy if you have a large number of dependant pods
+#           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
+Pods/
 
 ### Swift ###
 # Xcode
@@ -75,8 +83,8 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-# End of https://www.gitignore.io/api/swift
+#Additional ignores
 
-# Aditional files to ignore...
+.DS_Store
 
-*/.DS_Store
+# End of https://www.gitignore.io/api/swift,cocoapods
