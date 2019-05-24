@@ -26,7 +26,7 @@ If you want to get the app running i suggest you check out the [Wiki](https://gi
 
 - [Arduino Json](https://github.com/bblanchon/ArduinoJson) used for serialization of sensors data.
 
-##Project Views
+## Project Views
 
 <div align="center">
 <img src = "https://user-images.githubusercontent.com/42248810/58344482-6aa62180-7e1b-11e9-9105-15f2267745f6.png" width="200">
